@@ -3,9 +3,10 @@
 // container
 .container {
   position: relative;
-  max-width: 1000px;
+  width: 100%;
+  max-width: 1410px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 90px;
 }
 
 // clear
@@ -42,8 +43,9 @@
 }
 
 // font
-.roboto {
-  font-family: $font-roboto;
+.helvetica {
+  font-family: $font-helvetica;
+  letter-spacing: normal;
 }
 
 // font-weight
@@ -98,4 +100,9 @@
 // user-select
 .no-select {
   user-select: none !important;
+}
+
+// section
+.section {
+  padding: 100px 0 200px;
 }

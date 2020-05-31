@@ -50,10 +50,12 @@ $authenticMotion: cubic-bezier(0.4, 0, 0.2, 1);
 
 // Fonts
 // ------------------------------------------------------------------------------
-$base-font-family: YakuHanJPs, 'Noto Sans JP', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, '游ゴシック', 'Yu Gothic', YuGothic, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
-$font-roboto: Roboto, sans-serif;
+$base-font-family: 'Noto Sans JP', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', Osaka, '游ゴシック', 'Yu Gothic', YuGothic, 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+$font-helvetica: Helvetica, Arial, Roboto, sans-serif;
 
 // Colors
 // ------------------------------------------------------------------------------
-$base-text-color: #000;
-$base-color: #000;
+$base-text-color: #222;
+$base-color: #1c2434;
+$accent-color: #e53e3a;
+$navy-light: #eaf4f4;

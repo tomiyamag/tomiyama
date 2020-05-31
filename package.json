@@ -25,6 +25,7 @@
     "del": "^3.0.0",
     "delete-empty": "^2.0.0",
     "eslint": "^5.12.1",
+    "flickity": "^2.2.1",
     "gsap": "^2.0.2",
     "gulp": "^3.9.1",
     "gulp-cached": "^1.1.1",

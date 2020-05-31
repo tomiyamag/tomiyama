@@ -164,7 +164,9 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/SmoothScroll */ "./src/assets/js/utils/SmoothScroll.js");
+/* harmony import */ var _utils_Jumbotron__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/Jumbotron */ "./src/assets/js/utils/Jumbotron.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 
 
 
@@ -172,11 +174,143 @@ var Main = function Main() {
   _classCallCheck(this, Main);
 
   new _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_0__["default"]();
+  new _utils_Jumbotron__WEBPACK_IMPORTED_MODULE_1__["default"]();
 };
 
 window.addEventListener('DOMContentLoaded', function () {
   new Main();
 });
+
+/***/ }),
+
+/***/ "./src/assets/js/utils/Jumbotron.js":
+/*!******************************************!*\
+  !*** ./src/assets/js/utils/Jumbotron.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Jumbotron; });
+/* harmony import */ var core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
+/* harmony import */ var core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var core_js_modules_es6_array_find__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es6.array.find */ "./node_modules/core-js/modules/es6.array.find.js");
+/* harmony import */ var core_js_modules_es6_array_find__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_es6_array_find__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var flickity__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! flickity */ "./node_modules/flickity/js/index.js");
+/* harmony import */ var flickity__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(flickity__WEBPACK_IMPORTED_MODULE_2__);
+
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Jumbotron =
+/*#__PURE__*/
+function () {
+  function Jumbotron() {
+    _classCallCheck(this, Jumbotron);
+
+    this.carousel = document.querySelector('.carousel');
+    this.slides = document.getElementsByClassName('carousel-cell');
+    this.options = {
+      pageDots: false,
+      prevNextButtons: false,
+      wrapAround: true,
+      pauseAutoPlayOnHover: false,
+      selectedAttraction: 0.015
+    };
+    this.init();
+  }
+
+  _createClass(Jumbotron, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      var flkty = new flickity__WEBPACK_IMPORTED_MODULE_2___default.a(this.carousel, this.options);
+      var carouselStatus = $('.carousel-status');
+      var carouselCurrent = carouselStatus.find('.carousel-status__num--current');
+      var carouselTotal = carouselStatus.find('.carousel-status__num--total');
+      flkty.on('scroll', function () {
+        flkty.slides.forEach(function (slide, i) {
+          var image = _this.slides[i];
+          var x = (slide.target + flkty.x) * -1 / 4;
+          image.style.backgroundPositionX = "".concat(x, "px");
+        });
+      }); // ステータス
+
+      var updateStatus = function updateStatus() {
+        carouselCurrent.text(flkty.selectedIndex + 1);
+        carouselTotal.text(flkty.slides.length);
+      };
+
+      updateStatus();
+      flkty.on('change', updateStatus); // プログレスバー
+
+      var duration = 5;
+      var interval = 10;
+      var progressBar = document.querySelector('.progress-bar');
+      var isPaused = false;
+      this.carousel.addEventListener('mouseenter', function () {
+        isPaused = true;
+      });
+      this.carousel.addEventListener('mouseleave', function () {
+        isPaused = false;
+      });
+      var percentTime, step, tick;
+
+      var startProgressbar = function startProgressbar() {
+        resetProgressbar();
+        percentTime = 0;
+        isPaused = false;
+        tick = window.setInterval(increase, interval);
+      };
+
+      var increase = function increase() {
+        if (!isPaused) {
+          step = duration * 1000 / interval;
+          percentTime += 100 / step;
+          progressBar.style.width = percentTime + '%';
+
+          if (percentTime >= 100) {
+            flkty.next();
+            startProgressbar();
+          }
+        }
+      };
+
+      var resetProgressbar = function resetProgressbar() {
+        progressBar.style.width = 0 + '%';
+        clearTimeout(tick);
+      };
+
+      startProgressbar(); // Next Prev
+
+      var prev = $('.carousel-arrows__arrow--prev');
+      var next = $('.carousel-arrows__arrow--next');
+      prev.on('click', function () {
+        flkty.previous(true);
+        startProgressbar();
+      });
+      next.on('click', function () {
+        flkty.next(true);
+        startProgressbar();
+      });
+      flkty.on('dragMove', startProgressbar);
+    }
+  }]);
+
+  return Jumbotron;
+}();
+
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
