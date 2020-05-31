@@ -179,8 +179,10 @@ var Main = function Main() {
 
   new _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_0__["default"]();
   new _utils_Slider4K__WEBPACK_IMPORTED_MODULE_1__["default"]();
-  new _utils_Collections__WEBPACK_IMPORTED_MODULE_2__["default"]();
   new _utils_Trending__WEBPACK_IMPORTED_MODULE_3__["default"]();
+  window.addEventListener('load', function () {
+    new _utils_Collections__WEBPACK_IMPORTED_MODULE_2__["default"]();
+  });
 };
 
 window.addEventListener('DOMContentLoaded', function () {

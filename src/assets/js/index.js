@@ -7,8 +7,11 @@ class Main {
   constructor() {
     new SmoothScroll();
     new Slider4K();
-    new Collections();
     new Trending();
+
+    window.addEventListener('load', () => {
+      new Collections();
+    });
   }
 }
 
