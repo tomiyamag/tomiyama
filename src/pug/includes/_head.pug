@@ -1,0 +1,32 @@
+- const themeColor = site.themeColor
+- const description = page.description ? page.description : site.description
+- const keywords = page.keywords ? page.keywords : site.keywords
+- const title = page.title
+- const ogType = (bodyId !== 'index') ? 'article' : 'website'
+- const ogUrl = site.url + page.path
+- const ogSiteName = site.ogSiteName
+- const ogImage = site.url + '/assets/images/sns.jpg'
+
+head(prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# " + ogType + ": http://ogp.me/ns/" + ogType + "#")
+  meta(charset="utf-8")
+  meta(name="viewport", content="width=device-width, initial-scale=1")
+  meta(http-equiv="X-UA-Compatible", content="IE=edge")
+  meta(name="format-detection", content="telephone=no")
+  meta(name="theme-color", content= themeColor)
+  meta(name="description", content= description)
+  meta(name="keywords", content= keywords)
+  title #{title}
+  meta(property="og:title", content= title)
+  meta(property="og:description", content= description)
+  meta(property="og:type", content= ogType)
+  meta(property="og:url", content= ogUrl)
+  meta(property="og:site_name", content= ogSiteName)
+  meta(property="og:image", content= ogImage)
+  meta(name="twitter:card", content="summary")
+  link(rel="apple-touch-icon", sizes="180x180", href="/assets/images/apple-touch-icon.png")
+  link(rel="icon", type="image/png", href="/assets/images/favicon-32x32.png", sizes="32x32")
+  link(rel="icon", type="image/png", href="/assets/images/favicon-16x16.png", sizes="16x16")
+  link(href="https://fonts.googleapis.com/css?family=Roboto:400,500,700", rel="stylesheet")
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/yakuhanjp@2.0.0/dist/css/yakuhanjp_s.min.css")
+  link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Noto+Sans+JP")
+  link(rel="stylesheet", href="/assets/css/app.css")

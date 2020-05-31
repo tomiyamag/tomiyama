@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+// Configuration and helpers
+@import
+  'abstracts/variables',
+  'abstracts/functions',
+  'abstracts/mixins';
+
+// Vendors
+@import
+  '~normalize.css';
+
+// Base
+@import
+  'base/default',
+  'base/general';
+
+// Components
+@import
+  'components/headings',
+  'components/buttons';
+
+// Layouts
+@import
+  'layouts/wrapper',
+  'layouts/header',
+  'layouts/main',
+  'layouts/footer';
+
+// Pages
+@import
+  'pages/index';
+
+// States
+@import
+  'states/scripts';
