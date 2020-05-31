@@ -165,7 +165,9 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/SmoothScroll */ "./src/assets/js/utils/SmoothScroll.js");
 /* harmony import */ var _utils_Jumbotron__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/Jumbotron */ "./src/assets/js/utils/Jumbotron.js");
+/* harmony import */ var _utils_Collections__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/Collections */ "./src/assets/js/utils/Collections.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 
 
 
@@ -175,11 +177,44 @@ var Main = function Main() {
 
   new _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_0__["default"]();
   new _utils_Jumbotron__WEBPACK_IMPORTED_MODULE_1__["default"]();
+  new _utils_Collections__WEBPACK_IMPORTED_MODULE_2__["default"]();
 };
 
 window.addEventListener('DOMContentLoaded', function () {
   new Main();
 });
+
+/***/ }),
+
+/***/ "./src/assets/js/utils/Collections.js":
+/*!********************************************!*\
+  !*** ./src/assets/js/utils/Collections.js ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Collections; });
+/* harmony import */ var masonry_layout__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! masonry-layout */ "./node_modules/masonry-layout/masonry.js");
+/* harmony import */ var masonry_layout__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(masonry_layout__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+var Collections = function Collections() {
+  _classCallCheck(this, Collections);
+
+  var container = document.querySelector('.collections__list');
+  var msnry = new masonry_layout__WEBPACK_IMPORTED_MODULE_0___default.a(container, {
+    itemSelector: '.collections__item',
+    percentPosition: true,
+    horizontalOrder: true,
+    gutter: 30
+  });
+};
+
+
 
 /***/ }),
 

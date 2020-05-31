@@ -161,4 +161,82 @@
       background-position: 50% 50%;
     }
   }
+
+  // Collections
+  // ------------------------------------------------------------------------------------------------------------------------
+  .collections {
+    .jumbotron {
+      margin-bottom: 100px;
+      background-color: $base-color;
+
+      &__title {
+        color: $accent-color;
+      }
+    }
+
+    &__list {
+      margin-bottom: -30px;
+    }
+
+    &__item {
+      overflow: hidden;
+      width: calc(50% - 15px);
+      margin-bottom: 30px;
+
+      a {
+        position: relative;
+        display: block;
+        text-decoration: none;
+
+        .image {
+          img {
+            @include ease(transform, 0.3s, ease);
+          }
+        }
+
+        .label {
+          position: absolute;
+          z-index: 1;
+          bottom: 30px;
+          left: 30px;
+          display: inline-block;
+          padding: 3px 40px 2px;
+          background-color: $base-color;
+
+          span {
+            display: inline-block;
+            font-size: 1.6rem;
+            color: #fff;
+
+            &::after {
+              content: attr(data-label-text);
+              font-family: $base-font-family;
+              font-size: 0;
+            }
+          }
+        }
+
+        &:hover {
+          .image {
+            img {
+              transform: scale(1.15);
+              opacity: 1;
+            }
+          }
+
+          .label {
+            padding: 2px 40px 3px;
+
+            span {
+              font-size: 0;
+
+              &::after {
+                font-size: 1.6rem;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

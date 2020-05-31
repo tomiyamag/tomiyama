@@ -1029,4 +1029,65 @@ a {
   background-image: url(/assets/images/index/dualcamera-jumbotron.jpg);
   background-position: 50% 50%
 }
+#index .collections .jumbotron {
+  margin-bottom: 100px;
+  background-color: #1c2434
+}
+#index .collections .jumbotron__title {
+  color: #e53e3a
+}
+#index .collections__list {
+  margin-bottom: -30px
+}
+#index .collections__item {
+  overflow: hidden;
+  width: calc(50% - 15px);
+  margin-bottom: 30px
+}
+#index .collections__item a {
+  position: relative;
+  display: block;
+  text-decoration: none
+}
+#index .collections__item a .image img {
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease,-webkit-transform 0.3s ease
+}
+#index .collections__item a .label {
+  position: absolute;
+  z-index: 1;
+  bottom: 30px;
+  left: 30px;
+  display: inline-block;
+  padding: 3px 40px 2px;
+  background-color: #1c2434
+}
+#index .collections__item a .label span {
+  display: inline-block;
+  font-size: 16px;
+  font-size: 1.6rem;
+  color: #fff
+}
+#index .collections__item a .label span::after {
+  content: attr(data-label-text);
+  font-family: "Noto Sans JP","ヒラギノ角ゴ Pro W3","Hiragino Kaku Gothic Pro",Osaka,"游ゴシック","Yu Gothic",YuGothic,"メイリオ",Meiryo,"ＭＳ Ｐゴシック","MS PGothic",sans-serif;
+  font-size: 0
+}
+#index .collections__item a:hover .image img {
+  -webkit-transform: scale(1.15);
+  transform: scale(1.15);
+  opacity: 1
+}
+#index .collections__item a:hover .label {
+  padding: 2px 40px 3px
+}
+#index .collections__item a:hover .label span {
+  font-size: 0
+}
+#index .collections__item a:hover .label span::after {
+  font-size: 16px;
+  font-size: 1.6rem
+}
 /*# sourceMappingURL=../sourcemaps/app.css.map */
