@@ -499,8 +499,8 @@ body {
   font-size: 14px;
   font-size: 1.4rem;
   line-height: 1.714;
-  letter-spacing: 1px;
-  letter-spacing: 0.1rem;
+  letter-spacing: 1.5px;
+  letter-spacing: 0.15rem;
   word-wrap: break-word;
   color: #222;
   -webkit-font-smoothing: antialiased
@@ -513,7 +513,7 @@ body {
 }
 body ::selection {
   color: #1c2434;
-  background-color: #1c2434
+  background-color: #e53e3a
 }
 h1,
 h2,
@@ -779,10 +779,20 @@ a {
   background-position: 55% 50%
 }
 #index ._4kdrone .carousel-wrapper {
-  padding: 100px 0
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  overflow: hidden;
+  margin: 100px 0;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center
 }
 #index ._4kdrone .carousel-container {
   position: relative;
+  z-index: 1;
   width: 58.53659%
 }
 #index ._4kdrone .carousel .carousel-cell {
@@ -865,5 +875,40 @@ a {
 }
 #index ._4kdrone .carousel-status__num {
   padding: 0 3px
+}
+#index ._4kdrone__heading {
+  position: relative;
+  width: 41.46341%;
+  margin-top: -70px;
+  font-size: 36px;
+  font-size: 3.6rem;
+  font-weight: 900;
+  line-height: 2;
+  text-align: center
+}
+#index ._4kdrone__heading span {
+  position: absolute;
+  z-index: 0;
+  top: 50%;
+  left: -60px;
+  display: block;
+  font-size: 420px;
+  font-size: 42rem;
+  font-weight: 900;
+  line-height: 1;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  letter-spacing: -5px;
+  letter-spacing: -0.5rem;
+  color: #e6eded
+}
+#index ._4kdrone__heading p {
+  position: relative;
+  display: inline-block;
+  text-align: left
 }
 /*# sourceMappingURL=../sourcemaps/app.css.map */

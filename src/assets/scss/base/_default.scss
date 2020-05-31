@@ -19,7 +19,7 @@ body {
   font-family: $base-font-family;
   font-size: 1.4rem;
   line-height: 1.714;
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.15rem;
   word-wrap: break-word;
   color: $base-text-color;
   -webkit-font-smoothing: antialiased;
@@ -28,7 +28,7 @@ body {
   }
   ::selection {
     color: $base-color;
-    background-color: $base-color;
+    background-color: $accent-color;
   }
 }
 
