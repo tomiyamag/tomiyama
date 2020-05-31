@@ -667,7 +667,7 @@ a {
   user-select: none !important
 }
 .section {
-  padding: 100px 0 200px
+  padding: 0 0 200px
 }
 .c-heading-jumbotron {
   display: -webkit-box;
@@ -709,7 +709,9 @@ a {
 .c-product-list-item:nth-child(3n+1) {
   border-left-width: 1px
 }
-.c-product-list-item:nth-last-child(4) ~ .c-product-list-item {
+.c-product-list-item:nth-last-child(1),
+.c-product-list-item:nth-last-child(2),
+.c-product-list-item:nth-last-child(3) {
   border-bottom-width: 1px
 }
 .c-product-list-item::before {
@@ -883,9 +885,6 @@ a {
 .l-main {
   margin-top: 90px
 }
-#index ._4kdrone {
-  padding-top: 0
-}
 #index ._4kdrone .jumbotron {
   background-color: #d1dfe2;
   background-image: url(/assets/images/index/jumbotron.jpg);
@@ -1023,5 +1022,11 @@ a {
   position: relative;
   display: inline-block;
   text-align: left
+}
+#index .dualcamera .jumbotron {
+  margin-bottom: 100px;
+  background-color: #7aa7ac;
+  background-image: url(/assets/images/index/dualcamera-jumbotron.jpg);
+  background-position: 50% 50%
 }
 /*# sourceMappingURL=../sourcemaps/app.css.map */

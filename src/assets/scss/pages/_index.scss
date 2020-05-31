@@ -4,8 +4,6 @@
   // 4K Drone
   // ------------------------------------------------------------------------------------------------------------------------
   ._4kdrone {
-    padding-top: 0;
-
     .jumbotron {
       background-color: #d1dfe2;
       background-image: url(/assets/images/index/jumbotron.jpg);
@@ -150,6 +148,17 @@
         display: inline-block;
         text-align: left;
       }
+    }
+  }
+
+  // Dual Camera
+  // ------------------------------------------------------------------------------------------------------------------------
+  .dualcamera {
+    .jumbotron {
+      margin-bottom: 100px;
+      background-color: #7aa7ac;
+      background-image: url(/assets/images/index/dualcamera-jumbotron.jpg);
+      background-position: 50% 50%;
     }
   }
 }
