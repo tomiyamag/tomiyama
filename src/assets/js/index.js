@@ -1,12 +1,14 @@
 import SmoothScroll from './utils/SmoothScroll';
-import Jumbotron from './utils/Jumbotron';
+import Slider4K from './utils/Slider4K';
 import Collections from './utils/Collections';
+import Trending from './utils/Trending';
 
 class Main {
   constructor() {
     new SmoothScroll();
-    new Jumbotron();
+    new Slider4K();
     new Collections();
+    new Trending();
   }
 }
 

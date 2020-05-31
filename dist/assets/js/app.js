@@ -164,9 +164,11 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/SmoothScroll */ "./src/assets/js/utils/SmoothScroll.js");
-/* harmony import */ var _utils_Jumbotron__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/Jumbotron */ "./src/assets/js/utils/Jumbotron.js");
+/* harmony import */ var _utils_Slider4K__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/Slider4K */ "./src/assets/js/utils/Slider4K.js");
 /* harmony import */ var _utils_Collections__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/Collections */ "./src/assets/js/utils/Collections.js");
+/* harmony import */ var _utils_Trending__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/Trending */ "./src/assets/js/utils/Trending.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 
 
 
@@ -176,8 +178,9 @@ var Main = function Main() {
   _classCallCheck(this, Main);
 
   new _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_0__["default"]();
-  new _utils_Jumbotron__WEBPACK_IMPORTED_MODULE_1__["default"]();
+  new _utils_Slider4K__WEBPACK_IMPORTED_MODULE_1__["default"]();
   new _utils_Collections__WEBPACK_IMPORTED_MODULE_2__["default"]();
+  new _utils_Trending__WEBPACK_IMPORTED_MODULE_3__["default"]();
 };
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -218,16 +221,16 @@ var Collections = function Collections() {
 
 /***/ }),
 
-/***/ "./src/assets/js/utils/Jumbotron.js":
-/*!******************************************!*\
-  !*** ./src/assets/js/utils/Jumbotron.js ***!
-  \******************************************/
+/***/ "./src/assets/js/utils/Slider4K.js":
+/*!*****************************************!*\
+  !*** ./src/assets/js/utils/Slider4K.js ***!
+  \*****************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Jumbotron; });
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Slider4K; });
 /* harmony import */ var core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
 /* harmony import */ var core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(core_js_modules_web_dom_iterable__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var core_js_modules_es6_array_find__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! core-js/modules/es6.array.find */ "./node_modules/core-js/modules/es6.array.find.js");
@@ -245,11 +248,11 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 
 
-var Jumbotron =
+var Slider4K =
 /*#__PURE__*/
 function () {
-  function Jumbotron() {
-    _classCallCheck(this, Jumbotron);
+  function Slider4K() {
+    _classCallCheck(this, Slider4K);
 
     this.carousel = document.querySelector('.carousel');
     this.slides = document.getElementsByClassName('carousel-cell');
@@ -263,7 +266,7 @@ function () {
     this.init();
   }
 
-  _createClass(Jumbotron, [{
+  _createClass(Slider4K, [{
     key: "init",
     value: function init() {
       var _this = this;
@@ -341,7 +344,7 @@ function () {
     }
   }]);
 
-  return Jumbotron;
+  return Slider4K;
 }();
 
 
@@ -455,6 +458,52 @@ function () {
 
   return SmoothScroll;
 }();
+
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
+
+/***/ }),
+
+/***/ "./src/assets/js/utils/Trending.js":
+/*!*****************************************!*\
+  !*** ./src/assets/js/utils/Trending.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Trending; });
+/* harmony import */ var flickity__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! flickity */ "./node_modules/flickity/js/index.js");
+/* harmony import */ var flickity__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(flickity__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+
+
+var Trending = function Trending() {
+  _classCallCheck(this, Trending);
+
+  var options = {
+    pageDots: false,
+    freeScroll: true,
+    prevNextButtons: false
+  };
+  var flkty = new flickity__WEBPACK_IMPORTED_MODULE_0___default.a('.trending__list', options);
+  var progressBar = document.querySelector('.progress-bar-2');
+  flkty.select(2);
+  flkty.on('scroll', function (progress) {
+    progress = Math.max(0, Math.min(1, progress));
+    progressBar.style.width = progress * 100 + '%';
+  });
+  var prev = $('.trending__arrows .arrow--prev');
+  var next = $('.trending__arrows .arrow--next');
+  prev.on('click', function () {
+    flkty.previous(false);
+  });
+  next.on('click', function () {
+    flkty.next(false);
+  });
+};
 
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))

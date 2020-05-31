@@ -1,6 +1,6 @@
 import Flickity from 'flickity';
 
-export default class Jumbotron {
+export default class Slider4K {
   constructor() {
     this.carousel = document.querySelector('.carousel');
     this.slides = document.getElementsByClassName('carousel-cell');
@@ -98,5 +98,4 @@ export default class Jumbotron {
 
     flkty.on('dragMove', startProgressbar);
   }
-
 }
