@@ -1,2 +1,28 @@
 footer#footer.l-footer
+  .footer-line
+    .footer-line__top
+    .footer-line__bottom
+
   .container
+    .footer-logo.no-select
+      a(href="/")
+        img(src="/assets/images/common/logos/logo-02.svg", alt="")
+
+    nav.footer-nav
+      ul.footer-nav__main-list
+        li.footer-nav__main-item.copyright.helvetica
+          small &copy; TOMIYAMA 2020
+        li.footer-nav__main-item
+          a(href="#") 特定商取引に関する法律
+        li.footer-nav__main-item
+          a(href="#") プライバシーポリシー
+        li.footer-nav__main-item
+          a(href="#") 会社概要
+
+      ul.footer-nav__sns-list
+        li.footer-nav__sns-item.footer-nav__sns-item--instagram
+          a(href="#", target="_blank")
+            img(src="/assets/images/common/icons/icon-instagram.png", alt="", width="23")
+        li.footer-nav__sns-item.footer-nav__sns-item--twitter
+          a(href="#", target="_blank")
+            img(src="/assets/images/common/icons/icon-twitter.png", alt="", width="23")
