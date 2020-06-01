@@ -1,5 +1,6 @@
 import 'jquery-drawer';
 import SmoothScroll from './utils/SmoothScroll';
+import ScrollLock from './utils/ScrollLock';
 import Slider4K from './utils/Slider4K';
 import Collections from './utils/Collections';
 import Trending from './utils/Trending';
@@ -7,6 +8,7 @@ import Trending from './utils/Trending';
 class Main {
   constructor() {
     new SmoothScroll();
+    new ScrollLock();
     new Slider4K();
     new Trending();
 

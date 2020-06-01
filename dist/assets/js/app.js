@@ -166,10 +166,12 @@ __webpack_require__.r(__webpack_exports__);
 /* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var jquery_drawer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery-drawer */ "./node_modules/jquery-drawer/dist/js/drawer.js");
 /* harmony import */ var jquery_drawer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_drawer__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/SmoothScroll */ "./src/assets/js/utils/SmoothScroll.js");
-/* harmony import */ var _utils_Slider4K__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/Slider4K */ "./src/assets/js/utils/Slider4K.js");
-/* harmony import */ var _utils_Collections__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/Collections */ "./src/assets/js/utils/Collections.js");
-/* harmony import */ var _utils_Trending__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/Trending */ "./src/assets/js/utils/Trending.js");
+/* harmony import */ var _utils_ScrollLock__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/ScrollLock */ "./src/assets/js/utils/ScrollLock.js");
+/* harmony import */ var _utils_Slider4K__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/Slider4K */ "./src/assets/js/utils/Slider4K.js");
+/* harmony import */ var _utils_Collections__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/Collections */ "./src/assets/js/utils/Collections.js");
+/* harmony import */ var _utils_Trending__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./utils/Trending */ "./src/assets/js/utils/Trending.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 
 
 
@@ -181,10 +183,11 @@ var Main = function Main() {
   _classCallCheck(this, Main);
 
   new _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_1__["default"]();
-  new _utils_Slider4K__WEBPACK_IMPORTED_MODULE_2__["default"]();
-  new _utils_Trending__WEBPACK_IMPORTED_MODULE_4__["default"]();
+  new _utils_ScrollLock__WEBPACK_IMPORTED_MODULE_2__["default"]();
+  new _utils_Slider4K__WEBPACK_IMPORTED_MODULE_3__["default"]();
+  new _utils_Trending__WEBPACK_IMPORTED_MODULE_5__["default"]();
   window.addEventListener('load', function () {
-    new _utils_Collections__WEBPACK_IMPORTED_MODULE_3__["default"]();
+    new _utils_Collections__WEBPACK_IMPORTED_MODULE_4__["default"]();
   });
   $('.drawer').drawer();
   $('.drawer-menu li a').on('click', function () {
@@ -228,6 +231,70 @@ var Collections = function Collections() {
 };
 
 
+
+/***/ }),
+
+/***/ "./src/assets/js/utils/ScrollLock.js":
+/*!*******************************************!*\
+  !*** ./src/assets/js/utils/ScrollLock.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function($) {/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return ScrollLock; });
+/* harmony import */ var body_scroll_lock__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! body-scroll-lock */ "./node_modules/body-scroll-lock/lib/bodyScrollLock.mjs");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var ScrollLock =
+/*#__PURE__*/
+function () {
+  function ScrollLock() {
+    _classCallCheck(this, ScrollLock);
+
+    this.toggle = $('.drawer-toggle');
+    this.isOpen = 0;
+    this.init();
+  }
+
+  _createClass(ScrollLock, [{
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      this.toggle.on('click', function () {
+        _this.isOpen === 0 ? _this.open() : _this.close();
+      });
+      window.addEventListener('resize', this.close);
+      $('.drawer').on('drawer.closed', this.close);
+    }
+  }, {
+    key: "open",
+    value: function open() {
+      this.isOpen = 1;
+      var target = document.querySelector('.drawer-nav');
+      Object(body_scroll_lock__WEBPACK_IMPORTED_MODULE_0__["disableBodyScroll"])(target);
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      this.isOpen = 0;
+      Object(body_scroll_lock__WEBPACK_IMPORTED_MODULE_0__["clearAllBodyScrollLocks"])();
+    }
+  }]);
+
+  return ScrollLock;
+}();
+
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 

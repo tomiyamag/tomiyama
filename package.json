@@ -21,6 +21,7 @@
     "@babel/preset-env": "^7.3.0",
     "autoprefixer": "^9.4.6",
     "babel-loader": "^8.0.5",
+    "body-scroll-lock": "^3.0.2",
     "browser-sync": "^2.26.3",
     "del": "^3.0.0",
     "delete-empty": "^2.0.0",
