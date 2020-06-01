@@ -233,6 +233,7 @@
   @include mq() {
     width: 100%;
     justify-content: center;
+    margin-top: 0;
   }
 
   li {

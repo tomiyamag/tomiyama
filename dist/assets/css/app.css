@@ -1644,7 +1644,8 @@ a {
     width: 100%;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center
+    justify-content: center;
+    margin-top: 0
   }
 }
 .drawer-menu-2-sns li {
@@ -1829,11 +1830,12 @@ a {
   }
 }
 .l-footer .footer-nav__sns-item--twitter {
-  margin-top: -2px
+  margin-top: -3px
 }
 @media (max-width: 48em) {
   .l-footer .footer-nav__sns-item--twitter {
-    width: 21px
+    width: 21px;
+    margin-top: -2px
   }
 }
 #index ._4kdrone .jumbotron {
