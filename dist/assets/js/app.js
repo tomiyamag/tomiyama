@@ -163,11 +163,14 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/SmoothScroll */ "./src/assets/js/utils/SmoothScroll.js");
-/* harmony import */ var _utils_Slider4K__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/Slider4K */ "./src/assets/js/utils/Slider4K.js");
-/* harmony import */ var _utils_Collections__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/Collections */ "./src/assets/js/utils/Collections.js");
-/* harmony import */ var _utils_Trending__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/Trending */ "./src/assets/js/utils/Trending.js");
+/* WEBPACK VAR INJECTION */(function($) {/* harmony import */ var jquery_drawer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery-drawer */ "./node_modules/jquery-drawer/dist/js/drawer.js");
+/* harmony import */ var jquery_drawer__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery_drawer__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/SmoothScroll */ "./src/assets/js/utils/SmoothScroll.js");
+/* harmony import */ var _utils_Slider4K__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/Slider4K */ "./src/assets/js/utils/Slider4K.js");
+/* harmony import */ var _utils_Collections__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./utils/Collections */ "./src/assets/js/utils/Collections.js");
+/* harmony import */ var _utils_Trending__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/Trending */ "./src/assets/js/utils/Trending.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
 
 
 
@@ -177,17 +180,22 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var Main = function Main() {
   _classCallCheck(this, Main);
 
-  new _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_0__["default"]();
-  new _utils_Slider4K__WEBPACK_IMPORTED_MODULE_1__["default"]();
-  new _utils_Trending__WEBPACK_IMPORTED_MODULE_3__["default"]();
+  new _utils_SmoothScroll__WEBPACK_IMPORTED_MODULE_1__["default"]();
+  new _utils_Slider4K__WEBPACK_IMPORTED_MODULE_2__["default"]();
+  new _utils_Trending__WEBPACK_IMPORTED_MODULE_4__["default"]();
   window.addEventListener('load', function () {
-    new _utils_Collections__WEBPACK_IMPORTED_MODULE_2__["default"]();
+    new _utils_Collections__WEBPACK_IMPORTED_MODULE_3__["default"]();
+  });
+  $('.drawer').drawer();
+  $('.drawer-menu li a').on('click', function () {
+    $('.drawer').drawer('close');
   });
 };
 
 window.addEventListener('DOMContentLoaded', function () {
   new Main();
 });
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js")))
 
 /***/ }),
 
@@ -412,7 +420,8 @@ function () {
         if (!_this.hasClass('is-no-smooth')) {
           var href = _this.attr('href');
 
-          var position = $(href).offset().top;
+          var headerHeight = $('#header').height();
+          var position = $(href).offset().top - headerHeight;
 
           _this2.tween(position);
 
@@ -431,9 +440,10 @@ function () {
         if (url.indexOf('?id=') !== -1) {
           var id = url.split('?id=');
           var target = $('#' + id[id.length - 1]);
+          var headerHeight = $('#header').height();
 
           if (target.length) {
-            var position = target.offset().top;
+            var position = target.offset().top - headerHeight;
 
             _this3.tween(position);
           }

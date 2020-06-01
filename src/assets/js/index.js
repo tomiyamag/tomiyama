@@ -1,3 +1,4 @@
+import 'jquery-drawer';
 import SmoothScroll from './utils/SmoothScroll';
 import Slider4K from './utils/Slider4K';
 import Collections from './utils/Collections';
@@ -11,6 +12,11 @@ class Main {
 
     window.addEventListener('load', () => {
       new Collections();
+    });
+
+    $('.drawer').drawer();
+    $('.drawer-menu li a').on('click', () => {
+      $('.drawer').drawer('close');
     });
   }
 }

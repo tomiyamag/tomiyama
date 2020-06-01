@@ -21,7 +21,8 @@ export default class SmoothScroll {
 
       if (!_this.hasClass('is-no-smooth')) {
         const href = _this.attr('href');
-        const position = $(href).offset().top;
+        const headerHeight = $('#header').height();
+        const position = $(href).offset().top - headerHeight;
         this.tween(position);
 
         return false;
@@ -36,9 +37,10 @@ export default class SmoothScroll {
       if (url.indexOf('?id=') !== -1) {
         const id = url.split('?id=');
         const target = $('#' + id[id.length - 1]);
+        const headerHeight = $('#header').height();
 
         if (target.length) {
-          const position = target.offset().top;
+          const position = target.offset().top - headerHeight;
           this.tween(position);
         }
       }

@@ -3,12 +3,12 @@ extends /layouts/_base
 block variables
   - const page = pages['index']
   - const bodyId = 'index'
-  - const bodyClass = ''
+  - const bodyClass = 'drawer drawer--right'
 
 block content
   //- 4K Drone
   //- ------------------------------------------------------------------------------------------------------------------------
-  section._4kdrone.section
+  section._4kdrone.section#_4kdrone
     .jumbotron.c-heading-jumbotron
       .container
         h2.jumbotron__title.c-heading-jumbotron-label 4K Drone
@@ -90,7 +90,7 @@ block content
 
   //- Dual Camera
   //- ------------------------------------------------------------------------------------------------------------------------
-  section.dualcamera.section
+  section.dualcamera.section#dualcamera
     .jumbotron.c-heading-jumbotron
       .container
         h2.jumbotron__title.c-heading-jumbotron-label Dual Camera
@@ -123,7 +123,7 @@ block content
 
   //- Collections
   //- ------------------------------------------------------------------------------------------------------------------------
-  section.collections.section
+  section.collections.section#collections
     .jumbotron.c-heading-jumbotron
       .container
         h2.jumbotron__title.c-heading-jumbotron-label Collections
@@ -160,7 +160,7 @@ block content
 
   //- Trending
   //- ------------------------------------------------------------------------------------------------------------------------
-  section.trending.section
+  section.trending.section#trending
     .container
       h2.trending__heading.c-heading-jumbotron-label Trending
 
