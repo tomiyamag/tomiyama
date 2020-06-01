@@ -492,7 +492,11 @@ var Trending = function Trending() {
   };
   var flkty = new flickity__WEBPACK_IMPORTED_MODULE_0___default.a('.trending__list', options);
   var progressBar = document.querySelector('.progress-bar-2');
-  flkty.select(2);
+
+  if (window.innerWidth > 768) {
+    flkty.select(2);
+  }
+
   flkty.on('scroll', function (progress) {
     progress = Math.max(0, Math.min(1, progress));
     progressBar.style.width = progress * 100 + '%';

@@ -10,7 +10,9 @@ export default class Trending {
     const flkty = new Flickity('.trending__list', options);
     const progressBar = document.querySelector('.progress-bar-2');
 
-    flkty.select(2);
+    if (window.innerWidth > 768) {
+      flkty.select(2);
+    }
 
     flkty.on('scroll', progress => {
       progress = Math.max(0, Math.min(1, progress));

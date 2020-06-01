@@ -14,12 +14,20 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+
+    @include mq() {
+      height: 60px;
+    }
   }
 
   .page-title {
     a {
       display: inline-block;
       width: 160px;
+
+      @include mq() {
+        width: 110px;
+      }
     }
   }
 
@@ -32,11 +40,22 @@
     &__item {
       margin-left: 40px;
 
+      @include mq() {
+        margin-left: 25px;
+      }
+
       &:first-child {
         margin-left: 0;
       }
 
       &--cart {
+        a {
+          display: inline-block;
+
+          @include mq() {
+            width: 22px;
+          }
+        }
       }
 
       &--burger {
@@ -45,6 +64,11 @@
           display: block;
           width: 20px;
           height: 18px;
+
+          @include mq() {
+            width: 18px;
+            height: 16px;
+          }
 
           span {
             position: absolute;
@@ -74,7 +98,9 @@
           &:hover {
             span {
               &:nth-child(3) {
-                width: 100%;
+                @include mq(medium, min, true) {
+                  width: 100%;
+                }
               }
             }
           }

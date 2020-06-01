@@ -12,6 +12,10 @@
     max-width: 1290px;
     padding: 0 30px;
   }
+
+  @include mq() {
+    padding: 0 20px;
+  }
 }
 
 // clear
@@ -110,4 +114,8 @@
 // section
 .section {
   padding: 0 0 200px;
+
+  @include mq() {
+    padding: 0 0 100px;
+  }
 }

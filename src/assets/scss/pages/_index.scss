@@ -8,6 +8,11 @@
       background-color: #d1dfe2;
       background-image: url(/assets/images/index/jumbotron.jpg);
       background-position: 55% 50%;
+
+      @include mq() {
+        background-image: url(/assets/images/index/jumbotron-sp.jpg);
+        background-position: 50% 50%;
+      }
     }
 
     .carousel-wrapper {
@@ -16,12 +21,22 @@
       margin: 100px 0;
       flex-wrap: wrap;
       align-items: center;
+
+      @include mq() {
+        display: block;
+        margin: 50px 0;
+      }
     }
 
     .carousel-container {
       position: relative;
       z-index: 1;
       width: percentage(720/1230);
+
+      @include mq() {
+        width: percentage(585/670);
+        margin-bottom: 50px;
+      }
     }
 
     .carousel {
@@ -70,6 +85,13 @@
         background-position: 50% 50%;
         background-size: 13px auto;
 
+        @include mq() {
+          width: percentage(85/585);
+          height: 0;
+          padding-top: percentage(85/585);
+          background-size: percentage(13/85) auto;
+        }
+
         &--prev {
           right: 0;
           background-image: url(/assets/images/common/icons/icon-arrow-left.png);
@@ -81,7 +103,9 @@
         }
 
         &:hover {
-          opacity: 0.7;
+          @include mq(medium, min, true) {
+            opacity: 0.7;
+          }
         }
       }
     }
@@ -95,6 +119,10 @@
       height: 4px;
       background-color: rgba(87.1%, 87.1%, 87.1%, 0.6);
 
+      @include mq() {
+        height: 2px;
+      }
+
       .progress-bar {
         position: absolute;
         z-index: 1;
@@ -103,6 +131,12 @@
         // width: 100%;
         height: 100%;
         background-color: $base-color;
+      }
+    }
+
+    .carousel-status-wrapper {
+      @include mq() {
+        text-align: center;
       }
     }
 
@@ -115,19 +149,43 @@
       font-weight: bold;
       color: $base-color;
 
+      @include mq() {
+        $num: 585 / 670 * 100;
+        bottom: percentage(85/375);
+        left: 100%;
+        display: inline-block;
+        width: calc(100% - #{$num + '%'});
+        margin-left: 1%;
+        letter-spacing: -0.4em;
+      }
+
       &__num {
         padding: 0 3px;
+
+        @include mq() {
+          display: inline-block;
+          letter-spacing: 0px;
+        }
+      }
+
+      span {
+        @include mq() {
+          letter-spacing: normal;
+        }
       }
     }
 
     &__heading {
       position: relative;
       width: percentage(510/1230);
-      margin-top: -70px;
       font-size: 3.6rem;
       font-weight: 900;
       line-height: 2;
       text-align: center;
+
+      @include mq(medium, min, true) {
+        margin-top: -70px;
+      }
 
       @include mq(xlarge) {
         font-size: 2.8rem;
@@ -135,6 +193,11 @@
 
       @include mq(large) {
         font-size: 2.4rem;
+      }
+
+      @include mq() {
+        width: 100%;
+        padding: 28px 0;
       }
 
       span {
@@ -158,6 +221,13 @@
         @include mq(large) {
           font-size: 28rem;
         }
+
+        @include mq() {
+          left: 0;
+          margin-right: auto;
+          margin-left: auto;
+          font-size: 20.5rem;
+        }
       }
 
       p {
@@ -176,6 +246,11 @@
       background-color: #7aa7ac;
       background-image: url(/assets/images/index/dualcamera-jumbotron.jpg);
       background-position: 50% 50%;
+
+      @include mq() {
+        margin-bottom: 50px;
+        background-image: url(/assets/images/index/dualcamera-jumbotron-sp.jpg);
+      }
     }
   }
 
@@ -186,6 +261,10 @@
       margin-bottom: 100px;
       background-color: $base-color;
 
+      @include mq() {
+        margin-bottom: 50px;
+      }
+
       &__title {
         color: $accent-color;
       }
@@ -193,12 +272,21 @@
 
     &__list {
       margin-bottom: -30px;
+
+      @include mq() {
+        margin-bottom: -20px;
+      }
     }
 
     &__item {
       overflow: hidden;
       width: calc(50% - 15px);
       margin-bottom: 30px;
+
+      @include mq() {
+        width: 100%;
+        margin-bottom: 20px;
+      }
 
       a {
         position: relative;
@@ -208,6 +296,7 @@
         .image {
           img {
             @include ease(transform, 0.3s, ease);
+            width: 100%;
           }
         }
 
@@ -220,10 +309,20 @@
           padding: 5px 40px 3px;
           background-color: $base-color;
 
+          @include mq() {
+            bottom: 15px;
+            left: 15px;
+            padding: 5px 30px;
+          }
+
           span {
             display: inline-block;
             font-size: 1.6rem;
             color: #fff;
+
+            @include mq() {
+              font-size: 1.3rem;
+            }
 
             &::after {
               content: attr(data-label-text);
@@ -244,11 +343,19 @@
           .label {
             padding: 4px 40px 5px;
 
+            @include mq() {
+              padding: 5px 30px 6px;
+            }
+
             span {
               font-size: 0;
 
               &::after {
                 font-size: 1.5rem;
+
+                @include mq() {
+                  font-size: 1.2rem;
+                }
               }
             }
           }
@@ -260,9 +367,19 @@
   // Trending
   // ------------------------------------------------------------------------------------------------------------------------
   .trending {
+    > .container {
+      @include mq() {
+        padding: 0;
+      }
+    }
+
     &__heading {
       margin-bottom: 20px;
       color: $base-text-color;
+
+      @include mq() {
+        padding: 0 20px;
+      }
     }
 
     &__list {
@@ -272,6 +389,11 @@
       width: 240px;
       padding-bottom: 100px;
       text-align: center;
+
+      @include mq() {
+        width: 150px;
+        padding-bottom: 50px;
+      }
 
       a {
         display: block;
@@ -284,12 +406,24 @@
           margin-bottom: 10px;
           // background-color: pink;
 
+          @include mq() {
+            height: 117px;
+          }
+
           img {
             position: absolute;
             z-index: 1;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+
+            @include mq() {
+              transform: translate(-50%, -50%) scale(0.5);
+            }
+
+            @include mq(xsmall) {
+              transform: translate(-50%, -50%) scale(0.4);
+            }
           }
         }
 
@@ -297,6 +431,10 @@
           margin-bottom: 6px;
           font-weight: 500;
           color: #818181;
+
+          @include mq() {
+            margin-bottom: 5px;
+          }
         }
 
         .name-en {
@@ -316,6 +454,14 @@
       margin-bottom: 80px;
       background-color: #dedede;
 
+      @include mq() {
+        width: calc(100% - 40px);
+        height: 2px;
+        margin-right: auto;
+        margin-bottom: 40px;
+        margin-left: auto;
+      }
+
       .progress-bar-2 {
         position: absolute;
         z-index: 1;
@@ -333,6 +479,12 @@
       justify-content: flex-end;
       align-items: flex-end;
 
+      @include mq() {
+        width: calc(100% - 40px);
+        margin-right: auto;
+        margin-left: auto;
+      }
+
       .arrow {
         @include ease();
         width: 85px;
@@ -342,6 +494,12 @@
         background-repeat: no-repeat;
         background-position: 50% 50%;
         background-size: 13px auto;
+
+        @include mq() {
+          width: 42px;
+          height: 42px;
+          background-size: 6px auto;
+        }
 
         &--prev {
           right: 0;
@@ -354,7 +512,9 @@
         }
 
         &:hover {
-          opacity: 0.7;
+          @include mq(medium, min, true) {
+            opacity: 0.7;
+          }
         }
       }
     }

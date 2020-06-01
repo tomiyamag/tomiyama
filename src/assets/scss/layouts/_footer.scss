@@ -4,15 +4,27 @@
   padding-bottom: 90px;
   background-color: #fff;
 
+  @include mq() {
+    padding-bottom: 45px;
+  }
+
   .footer-line {
     &__top {
       height: 7px;
       background-color: $base-color;
+
+      @include mq() {
+        height: 4px;
+      }
     }
 
     &__bottom {
       height: 3px;
       background-color: $accent-color;
+
+      @include mq() {
+        height: 2px;
+      }
     }
   }
 
@@ -20,18 +32,25 @@
     margin-top: 200px;
     margin-bottom: 90px;
 
+    @include mq() {
+      margin-top: 100px;
+      margin-bottom: 45px;
+    }
+
     a {
       @include ease(transform, 0.5s, ease);
       display: inline-block;
 
       img {
         width: 100px;
+
+        @include mq() {
+          width: 70px;
+        }
       }
 
       &:hover {
-        @include mq(medium, min, true) {
-          transform: rotate(90deg);
-        }
+        transform: rotate(90deg);
       }
     }
   }
@@ -45,11 +64,21 @@
     &__main-list {
       display: flex;
       flex-wrap: wrap;
+
+      @include mq() {
+        display: block;
+      }
     }
 
     &__main-item {
       margin-left: 30px;
       font-size: 1.2rem;
+
+      @include mq() {
+        margin-top: 15px;
+        margin-left: 0;
+        font-size: 1rem;
+      }
 
       a {
         text-decoration: none;
@@ -62,8 +91,16 @@
       &.copyright {
         margin-left: 0;
 
+        @include mq() {
+          margin-top: 0;
+        }
+
         small {
           font-size: 1.3rem;
+
+          @include mq() {
+            font-size: 1.1rem;
+          }
         }
       }
     }
@@ -78,8 +115,22 @@
     &__sns-item {
       margin-left: 30px;
 
-      &.instagram {
+      @include mq() {
+        margin-left: 20px;
+      }
+
+      &--instagram {
         margin-left: 0;
+
+        @include mq() {
+          width: 21px;
+        }
+      }
+
+      &--twitter {
+        @include mq() {
+          width: 21px;
+        }
       }
     }
   }
