@@ -17,7 +17,9 @@
     background-color: $accent-color;
 
     &:hover {
-      opacity: 0.7;
+      @include mq(medium, min, true) {
+        opacity: 0.7;
+      }
     }
   }
 
