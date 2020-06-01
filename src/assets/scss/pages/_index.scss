@@ -28,7 +28,8 @@
       .carousel-cell {
         position: relative;
         width: 100%;
-        height: 524px;
+        height: 0;
+        padding-top: percentage(524/720);
         background-color: $base-color;
         background-position: 0 0;
         background-size: cover;
@@ -128,6 +129,14 @@
       line-height: 2;
       text-align: center;
 
+      @include mq(xlarge) {
+        font-size: 2.8rem;
+      }
+
+      @include mq(large) {
+        font-size: 2.4rem;
+      }
+
       span {
         position: absolute;
         z-index: 0;
@@ -141,6 +150,14 @@
         transform: translate(0, -50%);
         letter-spacing: -0.5rem;
         color: #e6eded;
+
+        @include mq(xlarge) {
+          font-size: 33rem;
+        }
+
+        @include mq(large) {
+          font-size: 28rem;
+        }
       }
 
       p {

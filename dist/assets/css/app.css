@@ -585,6 +585,12 @@ a {
   margin: 0 auto;
   padding: 0 90px
 }
+@media (max-width: 74.9375em) {
+  .container {
+    max-width: 1290px;
+    padding: 0 30px
+  }
+}
 .clear {
   clear: both !important
 }
@@ -706,13 +712,33 @@ a {
   border-style: solid;
   border-color: #dedede
 }
-.c-product-list-item:nth-child(3n+1) {
-  border-left-width: 1px
+@media (max-width: 64em) {
+  .c-product-list-item {
+    width: 50%
+  }
 }
-.c-product-list-item:nth-last-child(1),
-.c-product-list-item:nth-last-child(2),
-.c-product-list-item:nth-last-child(3) {
-  border-bottom-width: 1px
+@media (min-width: 64.0625em) {
+  .c-product-list-item:nth-child(3n+1) {
+    border-left-width: 1px
+  }
+}
+@media (max-width: 64em) {
+  .c-product-list-item:nth-child(2n+1) {
+    border-left-width: 1px
+  }
+}
+@media (min-width: 64.0625em) {
+  .c-product-list-item:nth-last-child(1),
+  .c-product-list-item:nth-last-child(2),
+  .c-product-list-item:nth-last-child(3) {
+    border-bottom-width: 1px
+  }
+}
+@media (max-width: 64em) {
+  .c-product-list-item:nth-last-child(1),
+  .c-product-list-item:nth-last-child(2) {
+    border-bottom-width: 1px
+  }
 }
 .c-product-list-item::before {
   content: '';
@@ -1000,7 +1026,8 @@ a {
 #index ._4kdrone .carousel .carousel-cell {
   position: relative;
   width: 100%;
-  height: 524px;
+  height: 0;
+  padding-top: 72.77778%;
   background-color: #1c2434;
   background-position: 0 0;
   background-size: cover
@@ -1088,6 +1115,18 @@ a {
   line-height: 2;
   text-align: center
 }
+@media (max-width: 74.9375em) {
+  #index ._4kdrone__heading {
+    font-size: 28px;
+    font-size: 2.8rem
+  }
+}
+@media (max-width: 64em) {
+  #index ._4kdrone__heading {
+    font-size: 24px;
+    font-size: 2.4rem
+  }
+}
 #index ._4kdrone__heading span {
   position: absolute;
   z-index: 0;
@@ -1107,6 +1146,18 @@ a {
   letter-spacing: -5px;
   letter-spacing: -0.5rem;
   color: #e6eded
+}
+@media (max-width: 74.9375em) {
+  #index ._4kdrone__heading span {
+    font-size: 330px;
+    font-size: 33rem
+  }
+}
+@media (max-width: 64em) {
+  #index ._4kdrone__heading span {
+    font-size: 280px;
+    font-size: 28rem
+  }
 }
 #index ._4kdrone__heading p {
   position: relative;

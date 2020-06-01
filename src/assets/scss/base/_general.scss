@@ -7,6 +7,11 @@
   max-width: 1410px;
   margin: 0 auto;
   padding: 0 90px;
+
+  @include mq(xlarge) {
+    max-width: 1290px;
+    padding: 0 30px;
+  }
 }
 
 // clear

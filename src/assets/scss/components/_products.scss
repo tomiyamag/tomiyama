@@ -17,14 +17,35 @@
   border-style: solid;
   border-color: #dedede;
 
+  @include mq(large) {
+    width: 50%;
+  }
+
   &:nth-child(3n+1) {
-    border-left-width: 1px;
+    @include mq(large, min, true) {
+      border-left-width: 1px;
+    }
+  }
+
+  &:nth-child(2n+1) {
+    @include mq(large) {
+      border-left-width: 1px;
+    }
   }
 
   &:nth-last-child(1),
   &:nth-last-child(2),
   &:nth-last-child(3) {
-    border-bottom-width: 1px;
+    @include mq(large, min, true) {
+      border-bottom-width: 1px;
+    }
+  }
+
+  &:nth-last-child(1),
+  &:nth-last-child(2) {
+    @include mq(large) {
+      border-bottom-width: 1px;
+    }
   }
 
   &::before {
