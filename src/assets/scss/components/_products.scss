@@ -74,9 +74,7 @@
     background-color: #f2f9f9;
 
     &::before {
-      @include mq(medium, min, true) {
-        opacity: 1;
-      }
+      opacity: 1;
     }
 
     img {

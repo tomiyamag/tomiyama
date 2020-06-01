@@ -790,10 +790,8 @@ a {
 .c-product-list-item:hover {
   background-color: #f2f9f9
 }
-@media (min-width: 48.0625em) {
-  .c-product-list-item:hover::before {
-    opacity: 1
-  }
+.c-product-list-item:hover::before {
+  opacity: 1
 }
 .c-product-list-item:hover img {
   opacity: 1
