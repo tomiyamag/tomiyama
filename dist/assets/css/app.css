@@ -2214,7 +2214,7 @@ a {
 }
 @media (max-width: 48em) {
   #index .trending__item {
-    width: 150px;
+    width: 170px;
     padding-bottom: 50px
   }
 }
